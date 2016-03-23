@@ -6,21 +6,28 @@ Record your responses inside the fenced code blocks below each question.
     and what are the main task(s) you perform inside an Ember Route?
 
     ```md
-    <!-- your response here -->
+    The main task you do in router is to set routes or url paths to the correct
+    route file.  In the route file that is where you define your model or data.
+
     ```
 
 1.  What is the command to generate a route named `boston` nested under
     `campus`?
 
     ```md
-    <!-- your response here -->
+    ember g route campus/boston
     ```
 
 1.  Suppose you have a nested route at the URL `/campus/boston`. How would you
     use the `link-to` helper to generate an appropriate link?
 
     ```md
-    <!-- your response here -->
+    What template are you linking from is it application or the campus template?
+    campus:
+    {{#link-to 'boston'}}{{/link-to}}
+
+    application:
+    {{#link-to 'campus.boston'}}{{/link-to}}
     ```
 
 1.  Explain **at least** two differences between the following two route
@@ -35,7 +42,13 @@ Record your responses inside the fenced code blocks below each question.
     ```
 
     ```md
-    <!-- your response here -->
+    The first route is saying that it is a nested route and that product model will be listed under the products model.
+    What happens with the first route is that the products model
+    will first render and then the product model will render inside
+    of it where there is an outlet.
+
+    The latter is not nested but still a dynamic route, product model
+    will load independently of products model. 
     ```
 
 1.  Suppose we have the following route definition:
@@ -48,11 +61,13 @@ Record your responses inside the fenced code blocks below each question.
     value `'123'` inside a Route?
 
     ```md
-    <!-- your response here -->
+    this.store.find('movies', params.movie_id);
     ```
 
 1.  Inside a template, how do we reference data provided by a Route?
 
     ```md
-    <!-- your response here -->
+      We want to hook the model data into the template.
+      {{#each model as |movie|}}
+      {{/each}}
     ```
